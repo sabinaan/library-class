@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Online Library</title>
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="heading">
+    <h1>Online Library</h1>
+    <button id="newBookButton">New book</button>
+  </div>
+
+  <div id="cardContainer"></div>
+
+  <div id="formContainer">
+    <form id="newBookForm">
+      <label for="title">Title:</label><br>
+      <input type="text" id="title" name="title"><br>
+      <label for="author">Author:</label><br>
+      <input type="text" id="author" name="author"><br>
+      <label for="pages">Number of pages:</label><br>
+      <input type="number" id="pages" name="pages"><br>
+      <label>Have you read the book?</label><br>
+      <input type="radio" id="yesRead" name="read" value="yes">
+      <label for="yesRead"> Yes</label><br>
+      <input type="radio" id="noRead" name="read" value="no">
+      <label for="noRead"> No</label><br>
+
+      <button id="submitForm" type="button">Submit</button>
+      <button id="cancelForm" type="button">Cancel</button>
+    </form>
+  </div>
+
+  <script src="books.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgb(245, 232, 207);
+}
+
+div{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h1{
+    padding-left: 30px;
+    font-weight: bold;
+    font-size: 40px;
+
+}
+
+button{
+    background-color:white;
+    height:40px;
+    border-radius:10px;
+    padding: 10px;
+    margin: 5px;
+    
+}
+
+
+
+.bookCard {
+    display: inline-block;
+    width: 250px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgb(253, 252, 251);
+    -webkit-box-shadow: 5px 5px 10px -2px rgb(0,0,0,0.75);
+    -moz-box-shadow: 5px 5px 10px -2px rgb(0,0,0,0.75);
+    box-shadow: 5px 5px 10px -2px rgb(0,0,0,0.75);
+}
+
+.titleSpan {
+    font-size: 30px;
+}
+
+
+#cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    column-gap: 20px;
+}
+
+#heading{
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+}
+
+#formContainer{
+    background-color: rgba(26, 34, 34, 0.774);
+    height:100%;
+    width: 100%;
+    position: absolute;
+    top:0px;
+    left:0px;
+    visibility: hidden;
+
+
+
+}
+
+#newBookForm{
+    background-color: white;
+    height:220px;
+    width: 450px;
+    padding:30px;
+    opacity: 100%;
+    position: relative;
+    margin:auto;
+    margin-top:30px;
+
+
+}
+
+
+
+
+
