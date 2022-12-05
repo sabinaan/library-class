@@ -20,20 +20,25 @@
   <div id="cardContainer"></div>
 
   <div id="formContainer">
-    <form id="newBookForm">
-      <label for="title">Title:</label><br>
-      <input type="text" id="title" name="title"><br>
-      <label for="author">Author:</label><br>
-      <input type="text" id="author" name="author"><br>
-      <label for="pages">Number of pages:</label><br>
-      <input type="number" id="pages" name="pages"><br>
-      <label>Have you read the book?</label><br>
-      <input type="radio" id="yesRead" name="read" value="yes">
+    <form id="newBookForm" novalidate>
+      <label for="title">Title*</label><br>
+      <input type="text" id="title" name="title" required>
+      <span class="error" id="titleError"  aria-live="polite"></span><br>
+      <label for="author">Author*</label><br>
+      <input type="text" id="author" name="author" required>
+      <span class="error" id="authorError" aria-live="polite"></span><br>
+      <label for="pages">Number of pages*</label><br>
+      <input type="number" id="pages" name="pages" min="1" required>
+      <span class="error" id="pagesError" aria-live="polite"></span><br>
+      <label>Have you read the book?*</label>
+      <span class="error" id="readError" aria-live="polite"></span><br>
+      <input type="radio" id="yesRead" name="read" value="yes" required>
       <label for="yesRead"> Yes</label><br>
-      <input type="radio" id="noRead" name="read" value="no">
+      <input type="radio" id="noRead" name="read" value="no" required>
       <label for="noRead"> No</label><br>
+      
 
-      <button id="submitForm" type="button">Submit</button>
+      <button id="submitForm" type="submit">Submit</button>
       <button id="cancelForm" type="button">Cancel</button>
     </form>
   </div>

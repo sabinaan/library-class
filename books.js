@@ -1,13 +1,31 @@
 const booksContainer = document.querySelector("#cardContainer");
 const newBookButton = document.querySelector("#newBookButton"); //New book button
 const formContainer = document.querySelector("#formContainer");
+const bookForm = document.querySelector("#newBookForm");
 const cancelButton = document.querySelector("#cancelForm"); //Cancel button
 const submitButton = document.querySelector("#submitForm"); //Submit button
 const titleInput = document.querySelector("#title");
+const titleError = document.querySelector('#titleError')
 const authorInput = document.querySelector("#author");
+const authorError = document.querySelector('#authorError')
 const pagesInput = document.querySelector("#pages");
+const pagesError = document.querySelector('#pagesError')
+const readInput = document.querySelector("input[name='read']");
+//const readInput = document.querySelector("input[name='read']:checked");//
+const readError = document.querySelector('#readError')
+
 
 let myLibrary = [];
+
+bookForm.addEventListener('submit', (event) =>{
+    event.preventDefault()
+
+    if (checkFormValidity()){
+        addBookToArray()
+    }
+    
+})
+
 
 class Book {
     constructor(title, author, pages, read) {
@@ -28,7 +46,7 @@ class Book {
 
 newBookButton.addEventListener('click', toggleForm);
 cancelButton.addEventListener('click', cancelForm);
-submitButton.addEventListener('click', addBookToArray);
+//submitButton.addEventListener('click', addBookToArray);
 
 function toggleForm(){
     if (formContainer.style.visibility == 'visible'){
@@ -134,6 +152,49 @@ function createReadStatusButtons(){
             } */
         })
     })
+}
+
+const checkFormValidity = function() {
+    let formValid = true;
+
+    if(titleInput.validity.valid){
+        titleError.textContent = "";
+    }else{
+        if (titleInput.validity.valueMissing) {
+            titleError.textContent = "You need to enter the title of the book";
+        }
+        formValid = false;
+    }
+    if(authorInput.validity.valid){
+        authorError.textContent = "";
+    }else{
+        if (authorInput.validity.valueMissing) {
+            authorError.textContent = "You need to enter the author of the book";
+        }
+        formValid = false;
+    }
+    if(pagesInput.validity.valid){
+        pagesError.textContent = "";
+    }else{
+        if (pagesInput.validity.valueMissing) {
+            pagesError.textContent = "You need to enter the number of pages of the book";
+        }
+        if (pagesInput.validity.rangeUnderflow) {
+            pagesError.textContent = "The number of pages can't be a negative number";
+        }
+        formValid = false;
+    }
+    if(readInput.validity.valid){
+        readError.textContent = "";
+    }else{
+        if (readInput.validity.valueMissing) {
+            readError.textContent = "Please enter if you have read the book or not";
+        }
+        formValid = false;
+    }  
+    
+    return formValid
+    
 }
 
 
